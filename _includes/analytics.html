@@ -6,3 +6,11 @@
   ga('create', '{{ site.analytics }}', 'auto');
   ga('send', 'pageview');
 </script> <!-- End Analytics -->
+<script>
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('{{site.baseurl}}/assets/js/sw.js')
+      .then(function() {
+        console.log('Service Worker Registered');
+      });
+  }
+</script>
